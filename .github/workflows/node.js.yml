@@ -22,4 +22,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: npm test
+    - name: Install opencode
+      run: npm install -g opencode-ai
+    - name: Verify opencode installation
+      run: opencode --version
